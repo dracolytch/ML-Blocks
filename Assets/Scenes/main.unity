@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.5748249, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -216,15 +216,20 @@ Prefab:
         type: 2}
       propertyPath: brain
       value: 
-      objectReference: {fileID: 1631722088}
+      objectReference: {fileID: 1631722087}
     - target: {fileID: 1006945698961704, guid: 90aa0e1bc9582df4ea563972e8493318, type: 2}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436921215809608, guid: 90aa0e1bc9582df4ea563972e8493318,
+        type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 90aa0e1bc9582df4ea563972e8493318, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &617483190
+--- !u!114 &645096365
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -233,7 +238,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 943466ab374444748a364f9d6c3e2fe2, type: 3}
-  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_Name: (Clone)
   m_EditorClassIdentifier: 
   brain: {fileID: 0}
 --- !u!1 &875326094
@@ -268,7 +273,7 @@ MonoBehaviour:
   columns: 5
   rowSpacing: 12
   columnSpacing: 8
-  BrainToUse: {fileID: 1631722088}
+  BrainToUse: {fileID: 1631722087}
 --- !u!4 &875326096
 Transform:
   m_ObjectHideFlags: 0
@@ -282,18 +287,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1010260026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35813a1be64e144f887d7d5f15b963fa, type: 3}
-  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  brain: {fileID: 1631722088}
 --- !u!1 &1232766512
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +376,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1447173053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e9bda8f3cf1492fa74926a530f6f70, type: 3}
+  m_Name: (Clone)
+  m_EditorClassIdentifier: 
+  continuousPlayerActions:
+  - key: 97
+    index: 0
+    value: 2
+  - key: 100
+    index: 1
+    value: 2
+  discretePlayerActions:
+  - key: 97
+    value: 2
+  - key: 100
+    value: 1
+  defaultAction: 0
+  brain: {fileID: 1631722087}
 --- !u!1 &1631722085
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +409,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1631722086}
-  - component: {fileID: 1631722088}
   - component: {fileID: 1631722087}
   m_Layer: 0
   m_Name: BreakoutBrain
@@ -421,37 +438,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1631722085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fa3cf35af6449f4daac317fb471fb9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1631722088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1631722085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c676a8ddf5a5f4f64b35e9ed5028679d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   brainParameters:
     stateSize: 6
-    actionSize: 2
+    actionSize: 3
     memorySize: 18
     cameraResolutions: []
     actionDescriptions:
-    - Left
-    - Right
-    actionSpaceType: 1
+    - 
+    - 
+    - 
+    actionSpaceType: 0
     stateSpaceType: 1
-  brainType: 2
+  brainType: 0
   CoreBrains:
-  - {fileID: 1890465904}
-  - {fileID: 617483190}
-  - {fileID: 1010260026}
-  - {fileID: 1981713462}
-  instanceID: 10320
+  - {fileID: 1447173053}
+  - {fileID: 645096365}
+  - {fileID: 2042691726}
+  instanceID: 10098
 --- !u!1 &1728782505
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +520,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1890465904
+--- !u!114 &2042691726
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -522,35 +528,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41e9bda8f3cf1492fa74926a530f6f70, type: 3}
-  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_Script: {fileID: 11500000, guid: 35813a1be64e144f887d7d5f15b963fa, type: 3}
+  m_Name: (Clone)
   m_EditorClassIdentifier: 
-  continuousPlayerActions: []
-  discretePlayerActions: []
-  defaultAction: -1
-  brain: {fileID: 1631722088}
---- !u!114 &1981713462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b23992c8eb17439887f5e944bf04a40, type: 3}
-  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  graphModel: {fileID: 4900000, guid: 1b99c8a0cd20af2409120b61084fdadb, type: 3}
-  graphScope: 
-  graphPlaceholders:
-  - name: epsilon
-    valueType: 1
-    minValue: 0
-    maxValue: 0
-  BatchSizePlaceholderName: batch_size
-  StatePlacholderName: state
-  RecurrentInPlaceholderName: recurrent_in
-  RecurrentOutPlaceholderName: recurrent_out
-  ObservationPlaceholderName: []
-  ActionPlaceholderName: action
-  brain: {fileID: 1631722088}
+  brain: {fileID: 1631722087}
