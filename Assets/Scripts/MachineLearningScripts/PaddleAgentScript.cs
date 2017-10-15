@@ -63,11 +63,11 @@ public class PaddleAgentScript : Agent {
         else
         {
             var left = (int)act[0];
-            var right = (int)act[1];
+            var right = (int)act[0];
             if (left != 0 || right != 0)
             {
-                if (left > 0) dir = direction.right;
-                if (right > 0) dir = direction.left;
+                if (left == 1) dir = direction.right;
+                if (right == 2) dir = direction.left;
 
                 if (dir == direction.left) paddle.Left();
                 if (dir == direction.right) paddle.Right();
